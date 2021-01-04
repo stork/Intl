@@ -17,7 +17,7 @@ class Locale
 {
     public static function getDefault()
     {
-        return 'en_US';
+        return 'cs_CZ';
     }
 
     public static function getDisplayLanguage($locale, $in_locale = null)
@@ -25,19 +25,19 @@ class Locale
         $locale = self::parseLocale($locale);
 
         if (isset($locale['language'])) {
-            return "English";
+            return "Czech";
         }
     }
 
     public static function parseLocale($locale)
     {
         if ($locale == null) {
-            return ['language' => 'en', 'region' => 'US',];
+            return ['language' => 'cs', 'region' => 'CZ',];
         }
-        if ($locale !== 'en_US' && $locale !== 'en') {
-            throw new UnexpectedValueException("This library currently supports English, $locale was used.");
+        if ($locale !== 'cs_CZ' && $locale !== 'cs') {
+            throw new UnexpectedValueException("This library currently supports Czech, $locale was used.");
         }
 
-        return ['language' => 'en', 'region' => 'US',];
+        return ['language' => 'cs', 'region' => 'CZ',];
     }
 }
