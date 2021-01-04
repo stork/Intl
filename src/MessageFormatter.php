@@ -17,7 +17,7 @@ use NumberFormatter;
 
 class MessageFormatter
 {
-    private $locale = 'en_US';
+    private $locale = 'cs_CZ';
     private $pattern;
     private $errorCode = false;
     private $errorMessage = null;
@@ -136,13 +136,13 @@ class MessageFormatter
         $type = strtoupper($type);
         $type = constant("IntlDateFormatter::$type");
 
-        $Date = new IntlDateFormatter('en_US', $type, IntlDateFormatter::NONE);
+        $Date = new IntlDateFormatter('cs_CZ', $type, IntlDateFormatter::NONE);
         return $Date->format($timestamp[0]);
     }
 
     protected function time($timestamp, $pattern)
     {
-        $Date = new IntlDateFormatter('en_US', IntlDateFormatter::NONE, IntlDateFormatter::NONE);
+        $Date = new IntlDateFormatter('cs_CZ', IntlDateFormatter::NONE, IntlDateFormatter::NONE);
         $Date->setPattern($pattern);
         return $Date->format($timestamp[0]);
     }

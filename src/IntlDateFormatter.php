@@ -28,7 +28,7 @@ class IntlDateFormatter
     const GREGORIAN = 1;
     const TRADITIONAL = 0;
 
-    private $locale = 'en';
+    private $locale = 'cs';
     private $datetype;
     private $timetype;
     private $timezone;
